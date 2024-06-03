@@ -11,7 +11,7 @@ function App() {
     <div className="App">
       <MapContainer center={[21.1414478, 79.0824843]} zoom={15} scrollWheelZoom={true}>
 
-      <TileLayer
+        <TileLayer
           attribution='&copy; <a href="https://www.thunderforest.com/maps/transport/">Thunderforest</a> contributors'
           url="https://{s}.tile.thunderforest.com/transport/{z}/{x}/{y}.png"
         />
@@ -19,7 +19,9 @@ function App() {
         <Polyline color='aqua' weight={8}
           positions={AquaLine}
         />
-
+        <Polyline color='orange' weight={8}
+          positions={OrangeLine}
+        />
         {
           EWC_Data.map((station) => (<CircleMarker center={[station.gps.lat, station.gps.lng]} radius={5} color='black'>
             <Popup>
@@ -28,7 +30,7 @@ function App() {
           </CircleMarker>))
         }
         {
-          NSC_Data.map((station) => (<CircleMarker center={[station.gps.lat, station.gps.lng]} radius={10} color='orange'>
+          NSC_Data.map((station) => (<CircleMarker center={[station.gps.lat, station.gps.lng]} radius={5} color='black'>
             <Popup>
               {station.name}
             </Popup>
