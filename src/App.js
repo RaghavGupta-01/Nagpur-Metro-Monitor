@@ -9,7 +9,7 @@ import OrangeLine from './RailLines/OrangeLine'
 function App() {
   return (
     <div className="App">
-      <MapContainer center={[21.1414478, 79.0824843]} zoom={15} scrollWheelZoom={true}>
+      <MapContainer center={[21.11821148, 79.07210749]} zoom={13} scrollWheelZoom={true}>
 
         <TileLayer
           attribution='&copy; <a href="https://www.thunderforest.com/maps/transport/">Thunderforest</a> contributors'
