@@ -1,15 +1,16 @@
 import React from 'react';
-import { MapContainer, TileLayer, CircleMarker, Popup, Polyline } from 'react-leaflet';
+import { MapContainer, TileLayer, CircleMarker, Popup, Polyline, ZoomControl, } from 'react-leaflet';
 import './App.css';
 import EWC_Data from "./stations/east-west-corridor.json"
 import NSC_Data from "./stations/north-south-corridor.json"
 import AquaLine from './RailLines/AquaLine'
 import OrangeLine from './RailLines/OrangeLine'
+import LocationMarker from './components/CurrentLocation';
 
 function App() {
   return (
     <div className="App">
-      <MapContainer center={[21.11821148, 79.07210749]} zoom={13} scrollWheelZoom={true}>
+      <MapContainer center={[21.11821148, 79.07210749]} zoom={13} scrollWheelZoom={true} zoomControl=''>
 
         <TileLayer
           attribution='&copy; <a href="https://www.thunderforest.com/maps/transport/">Thunderforest</a> contributors'
@@ -36,7 +37,10 @@ function App() {
             </Popup>
           </CircleMarker>))
         }
-
+        <div className="map-controls">
+          <LocationMarker />
+          <ZoomControl position='bottomright'/>
+        </div>
       </MapContainer>
     </div>
   );
